@@ -18,5 +18,6 @@ class BotService:
         async with httpx.AsyncClient() as client:
             url = BotSettings.API_URL % Action.SEND_MESSAGE
             response = await client.post(url=url, json={"chat_id": chat_id, "text": text})
+            print(chat_id)
         return loads(response.content), response.status_code
 

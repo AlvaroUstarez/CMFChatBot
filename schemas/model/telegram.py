@@ -5,15 +5,16 @@ class FromSchema(BaseModel):
     id: int = Field(..., title="ID del usuario")
     is_bot: bool = Field(..., title="Es bot o no")
     first_name: constr(strict=True) = Field(..., title="Nombre del usuario")
-    username: constr(strict=True) = Field(..., title="Nombre de usuario")
+    last_name: constr(strict=True) = Field(..., title="Apellido del usuario")
     language_code: constr(strict=True) = Field(..., title="Idioma")
 
 
 class ChatSchema(BaseModel):
     id: int = Field(..., title="ID del chat")
     first_name: constr(strict=True) = Field(..., title="Nombre del usuario")
-    username: constr(strict=True) = Field(..., title="Nombre de usuario")
+    last_name: constr(strict=True) = Field(..., title="Apellido del usuario")
     type: constr(strict=True) = Field(..., title="Tipo de chat")
+    
 
 
 class MessageSchema(BaseModel):
@@ -42,13 +43,13 @@ class TelegramMessageSchema(BaseModel):
                         "id": 1084783282,
                         "is_bot": False,
                         "first_name": "faqn2",
-                        "username": "faQn2s",
+                        "last_name": "faqn2",
                         "language_code": "es"
                     },
                     "chat": {
                         "id": 1084783282,
                         "first_name": "faqn2",
-                        "username": "faQn2s",
+                        "last_name": "faqn2",
                         "type": "private"
                     },
                     "date": 1641925988,
